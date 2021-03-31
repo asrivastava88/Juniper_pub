@@ -1,0 +1,26 @@
+---
+- name: Enable NETCONF on Junos Devices
+  hosts: junos
+  connection: network_cli
+  gather_facts: no
+  vars_prompt:
+    - name: uname
+      prompt: "Enter Your Username to login to the device" # Promp the message while asking for user's input
+      private: no # Make the text visible to users
+    - name: passwd
+      prompt: "Enter Your Password of above username"
+      private: yes # Make the text invisible to users
+      unsafe: yes # Allows special characters input by user. Its required especially in passwords.
+
+  tasks:
+    - name: Enabling NETCONF on Junos Devices
+      junos_netconf:
+        listens_on: 830
+        state: present
+        provider:
+          password: "{{passwd}}"
+          port: 22
+          username: "{{uname}}"
+          transport: cli
+      register: var_netconf
+    - debug: msg="{{var_netconf}}"

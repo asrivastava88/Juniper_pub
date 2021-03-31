@@ -1,0 +1,16 @@
+---
+- name: Gather device Facts
+  hosts: junos
+  tasks:
+    - name: gather facts
+      junos_facts:
+      register: facts
+    - name: debug
+      debug:
+        var: facts
+    - name: debug more
+      debug:
+        var: ansible_net_memfree_mb
+    - name: debug even more
+      debug:
+        var: ansible_net_interfaces.ge-0/0/0

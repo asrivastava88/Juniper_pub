@@ -1,0 +1,21 @@
+---
+- name: Create new VLANs on JunOS
+  hosts: junos
+  tasks:
+    - name: Creating VLAN ID 10 & 20
+      junos_vlans:
+        config:
+          - name: DATA
+            description: DATA VLAN
+            vlan_id: 10
+          - name: VOICE
+            description: VOICE VLAN
+            vlan_id: 20
+        state: merged
+      register: output
+    - name: Printing Script Output
+      debug:
+        msg: "{{output}}"
+############################################################
+############## NOT WORKING #################################
+############################################################

@@ -1,0 +1,22 @@
+---
+- name: Trial Playbook
+  hosts: junos
+  connection: local
+  gather_facts: no
+  roles:
+    - Juniper.junos
+
+  vars_prompt:
+    - name: uname
+      prompt: "Your Username?"
+      private: no
+    - name: pass
+      prompt: "Type your Password"
+      private: yes
+
+  tasks:
+    - name: Rebooting the VMX
+      Juniper_junos_system:
+        action: "reboot"
+        user: "{{uname}}"
+        passwd: "{{pass}}"

@@ -1,0 +1,11 @@
+---
+- name: Collect Backup of Junos machines
+  hosts: junos
+
+  tasks:
+    - name: Collecting Backup
+      junos_config:
+        backup: yes
+        backup_options:
+          filename: backup_{{inventory_hostname}}.cfg
+          dir_path: ./backup/

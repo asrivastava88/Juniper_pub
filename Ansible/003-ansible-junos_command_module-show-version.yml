@@ -1,0 +1,10 @@
+---
+- name: Collect JUNOS Version
+  hosts: junos
+  tasks:
+    - name: Running "show version" Command
+      junos_command:
+        commands: show version
+      register: version
+    - name: Print version
+      debug: version

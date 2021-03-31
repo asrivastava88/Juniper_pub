@@ -1,0 +1,14 @@
+---
+# host: "{{inventory_hostname}}"
+# connection: network_cli
+# ansible_network_os: junos
+# transport: cli
+# ansible_net_username: avinash
+# ansible_net_password: Cisco123
+
+ansible_network_os: junos
+ansible_user: "{{uname}}"
+ansible_password: "{{passwd}}"
+
+# "ansible_onnection" plugin is defined directly in the script
+# "uname" & "passwd" variables are defined in the script# 004 & 005

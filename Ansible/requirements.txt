@@ -1,0 +1,39 @@
+python3>=3.5
+pip3
+ansible>=2.8 # Recommended Ansible version 2.9 or higher
+ncclient>=v0.5.2 # Paramiko is also compulsory and comes with "ncclient"
+passlib
+
+# From Ansibe Galaxy, install JUNOS Plugin.
+Juniper.junos # ansible-galaxy collection install Juniper.junos
+
+
+# netconf should be enabled on juniper devices to run Junos modules.
+# "set system services netconf ssh"
+
+# If not enabled, use script# 004 to enable it.
+
+################################################################
+################################################################
+##### All Scripts have been tested on following versions #######
+################################################################
+################################################################
+##### Ubuntu 20.4                                 ##############
+#####    lsb_release -a                           ##############
+#####    No LSB modules are available.            ##############
+#####    Distributor ID: Ubuntu                   ##############
+#####    Description:    Ubuntu 20.04.1 LTS       ##############
+#####    Release:        20.04                    ##############
+#####    Codename:       focal                    ##############
+#####                                             ##############
+##### Ansible 2.10                                ##############
+#####    ansible 2.10.3                           ##############
+#####                                             ##############
+##### Python 3.8                                  ##############
+#####    Python 3.8.5                             ##############
+#####                                             ##############
+################################################################
+################################################################
+################################################################
+################################################################
+################################################################

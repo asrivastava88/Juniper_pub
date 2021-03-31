@@ -1,0 +1,10 @@
+---
+- name: Anything
+  hosts: all
+  roles:
+      - Juniper.junos
+  connection: local
+  gather_facts: no
+  tasks:
+      - name: Get Junos device info
+        juniper_junos_facts:
